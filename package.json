@@ -72,9 +72,6 @@
             "require": "./dist/verification-code-input.umd.js"
         }
     },
-    "publishConfig": {
-        "registry": "https://npm.pkg.github.com"
-    },
     "main": "./dist/verification-code-input.umd.js",
     "module": "./dist/verification-code-input.es.js"
 }
