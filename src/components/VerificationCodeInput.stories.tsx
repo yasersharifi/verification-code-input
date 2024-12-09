@@ -1,34 +1,3 @@
-// import React from "react";
-// import { Meta, StoryObj } from "@storybook/react";
-// import VerificationCodeInput from "./VerificationCodeInput";
-
-// const meta=  {
-//     title: "Components/VerificationCodeInput",
-//     component: VerificationCodeInput,
-//     tags: ["autodocs"],
-//     argTypes: {
-//         length: { control: "number" },
-//     },
-// } satisfies Meta<typeof VerificationCodeInput>;
-
-// export default meta;
-
-// const Template: StoryObj<typeof meta> = (args) => (
-//     <VerificationCodeInput {...args} />
-// );
-
-// export const Default = Template.bind({});
-// Default.args = {
-//     length: 6,
-//     onComplete: (code: string) => alert(`Code entered: ${code}`),
-// };
-
-// export const FourDigits = Template.bind({});
-// FourDigits.args = {
-//     length: 4,
-//     onComplete: (code: string) => alert(`Code entered: ${code}`),
-// };
-
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
 import VerificationCodeInput from "./VerificationCodeInput";

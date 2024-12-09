@@ -1,50 +1,94 @@
-# React + TypeScript + Vite
+# VerificationCodeInput Component
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A reusable React component for entering verification codes. This component is designed to handle input boxes for numeric or alphanumeric verification codes, with support for customizable length and callback functionality.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Installation
 
-## Expanding the ESLint configuration
+Install the component using npm or yarn:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```bash
+npm install verification-code-input-react
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+or
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```bash
+yarn add verification-code-input-react
 ```
+
+---
+
+## Usage
+
+Here’s an example of how to use the `VerificationCodeInput` component:
+
+```tsx
+import React from "react";
+import VerificationCodeInput from "verification-code-input-react";
+
+function App() {
+    const handleComplete = (code: string) => {
+        console.log("Verification code entered:", code);
+    };
+
+    return (
+        <VerificationCodeInput
+            length={6}
+            onComplete={handleComplete}
+        />
+    );
+}
+
+export default App;
+```
+
+---
+
+## API
+
+### Props
+
+| Name         | Type                     | Default     | Description                                                                |
+| ------------ | ------------------------ | ----------- | -------------------------------------------------------------------------- |
+| `length`     | `number`                 | `6`         | Number of input boxes for the verification code.                           |
+| `onComplete` | `(code: string) => void` | `undefined` | Callback triggered when the user completes entering the verification code. |
+
+---
+
+## Examples
+
+### Default Usage (6 Digits)
+
+The default configuration uses 6 input boxes.
+
+```tsx
+<VerificationCodeInput
+    length={6}
+    onComplete={(code) => console.log(code)}
+/>
+```
+
+### Four Digits
+
+You can customize the number of input boxes using the `length` prop.
+
+```tsx
+<VerificationCodeInput
+    length={4}
+    onComplete={(code) => console.log(code)}
+/>
+```
+
+---
+
+## Storybook
+
+For interactive examples and testing, visit the [Storybook documentation](#). _(Update this link to your live Storybook instance.)_
+
+---
+
+## License
+
+This project is licensed under the MIT License. See the `LICENSE` file for details.

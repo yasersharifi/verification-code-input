@@ -50,5 +50,9 @@
     "main": "eslint.config.js",
     "keywords": [],
     "author": "",
-    "license": "MIT"
+    "license": "MIT",
+    "files": [
+        "dist/",
+        "README.md"
+    ]
 }
