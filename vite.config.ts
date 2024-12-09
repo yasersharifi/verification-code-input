@@ -9,7 +9,7 @@ export default defineConfig({
         lib: {
             entry: path.resolve(__dirname, "src/lib/index.ts"),
             name: "verification-code-input",
-            fileName: (format) => `name.${format}.js`,
+            fileName: (format) => `verification-code-input.${format}.js`,
         },
     },
 });
