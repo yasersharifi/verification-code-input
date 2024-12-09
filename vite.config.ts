@@ -7,7 +7,7 @@ export default defineConfig({
     plugins: [react()],
     build: {
         lib: {
-            entry: path.resolve(__dirname, "src/lib/index.js"),
+            entry: path.resolve(__dirname, "src/lib/index.ts"),
             name: "verification-code-input",
             fileName: (format) => `name.${format}.js`,
         },
