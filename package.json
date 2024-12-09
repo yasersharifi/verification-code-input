@@ -4,11 +4,14 @@
     "type": "module",
     "scripts": {
         "dev": "vite",
-        "build": "tsc -b && vite build",
+        "build-tsc": "tsc -b && vite build",
         "lint": "eslint .",
         "preview": "vite preview",
         "storybook": "storybook dev -p 6006",
-        "build-storybook": "storybook build"
+        "build-storybook": "storybook build",
+        "prepublish": "rm -rf ./dist && npm run build",
+        "build": "vite build"
+    
     },
     "dependencies": {
         "react": "^18.3.1",
@@ -47,12 +50,32 @@
         ]
     },
     "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
-    "main": "eslint.config.js",
-    "keywords": [],
-    "author": "",
+    "keywords": [
+        "react",
+        "component",
+        "verification",
+        "verification code",
+        "verification code input",
+        "react verification code input"
+    ],
+    "author": "Yaser Sharifi",
     "license": "MIT",
     "files": [
-        "dist/",
-        "README.md"
-    ]
+        "dist/"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/yasersharifi/verification-code-input.git"
+    },
+    "exports": {
+        ".": {
+            "import": "./dist/verification-code-input.es.js",
+            "require": "./dist/verification-code-input.umd.js"
+        }
+    },
+    "publishConfig": {
+        "registry": "https://npm.pkg.github.com"
+    },
+    "main": "./dist/verification-code-input.umd.js",
+    "module": "./dist/verification-code-input.es.js"
 }
