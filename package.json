@@ -1,6 +1,6 @@
 {
-    "name": "verification-code-input",
-    "version": "0.1.0",
+    "name": "verification-code-input-react",
+    "version": "1.0.0",
     "type": "module",
     "scripts": {
         "dev": "vite",
