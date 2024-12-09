@@ -1,5 +1,5 @@
 import React from "react";
-import VerificationCodeInput from "./components/VerificationCodeInput";
+import VerificationCodeInput from ".";
 
 const App: React.FC = () => {
     const handleComplete = (code: string) => {
